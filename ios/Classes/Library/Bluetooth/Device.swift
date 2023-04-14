@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import CoreBluetooth
+
+// MARK: - BluetoothDevice
+public protocol BluetoothDevice {
+    
+    var uuidString: String { get }
+}
+
+// MARK: - Implementations
+extension CBPeripheral: BluetoothDevice {
+    
+    public var uuidString: String {
+        identifier.uuidString
+    }
+}
