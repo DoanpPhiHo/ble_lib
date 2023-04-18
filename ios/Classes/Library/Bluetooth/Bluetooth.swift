@@ -129,6 +129,7 @@ extension Bluetooth {
     
     // MARK: Connect
     
+    @available(iOS 15.0, *)
     public func connect<T: BluetoothDevice>(to device: T) async throws {
         try await connect(toDeviceWithUUID: device.uuidString)
     }
